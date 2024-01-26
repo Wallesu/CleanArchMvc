@@ -52,13 +52,13 @@ namespace CleanArchMvc.Domain.Entities
             DomainExceptionValidation.When(name.Length < 3, "Invalid Name, too short, minimum 3 characters");
 
             DomainExceptionValidation.When(string.IsNullOrEmpty(description), "Invalid field. Description is required");
-            DomainExceptionValidation.When(description.Length < 5, "Invalid Description, too short, minimum 3 characters");
+            DomainExceptionValidation.When(description.Length < 5, "Invalid Description, too short, minimum 5 characters");
 
             DomainExceptionValidation.When(price < 0, "Invalid Price value");
 
             DomainExceptionValidation.When(stock < 0, "Invalid Stock value");
 
-            DomainExceptionValidation.When(image.Length > 250, "Invalid Image name, too long, maximum 250 characters");
+            DomainExceptionValidation.When(image?.Length > 250, "Invalid Image name, too long, maximum 250 characters");
         }
     }
 }
